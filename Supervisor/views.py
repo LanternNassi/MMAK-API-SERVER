@@ -408,3 +408,8 @@ def batchuploadProducts(request):
         else :
             return Response(data = serialized_prod.error_messages , status = status.HTTP_500_INTERNAL_SERVER_ERROR)
     return Response(data={'success':True} , status = status.HTTP_201_CREATED)
+
+@api_view(['GET'])
+@permission_classes([])
+def check_connectivity(request):
+    return Response(data = {} , status=status.HTTP_200_OK)
