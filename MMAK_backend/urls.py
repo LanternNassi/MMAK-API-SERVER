@@ -62,6 +62,7 @@ urlpatterns = [
     path('deleteproduct/<str:product>/' , deleteProduct , name = "Delete a product"),
     path('updateQuantity/<str:name>/<str:quantity>/', updateQuantity , name = "Update a product quantity"),
     path('BatchUpload/' , batchuploadProducts , name = "Batch Upload products"),
+    path('check_connectivity/' , check_connectivity , name = "Check connectivity"),
 
 ]
 
