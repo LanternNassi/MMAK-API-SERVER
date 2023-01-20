@@ -39,6 +39,30 @@ urlpatterns = [
     path('transactiontracker/<int:id>/' , view_transactiontracker , name = "View transaction tracks"),
     path('searchProduct/<str:keywords>/' , search_products , name = "Search products"),
     path('searchCategory/<str:keywords>/' , search_categories , name = "Search Category"),
+
+    path('createUser/' , create_user , name = 'Create new user'),
+    path('updateUser/' , update_user , name = 'Update user'),
+    path('deleteUser/<str:name>/', delete_user , name = 'Delete user'),
+
+    path('createTransaction/' , create_transaction , name = 'Create new transaction'),
+    path('updatetransaction/<str:id>/<str:Return_amount>/<str:Paid_amount>/<str:cleared>/' , updateTransaction , name = 'Update transaction'),
+    path('createdetail/' , createdetails , name = 'Create detail'),
+    path ('createtrack/<str:id>/<str:paid_amount>/<str:updated_by>/' , createtrack , name = "create new track"),
+
+    path('createCategory/' ,createCategory , name = "Create new category"),
+    path('updateCategory/', update_category , name = "Update a category"),
+    path('deleteCategory/<str:Category>/', delete_category , name = "Delete category"),
+
+    path('createCust/', createCust , name = "Create a customer"),
+    path('updateCust/' , update_cust , name = "Update a customer"),
+    path('deleteCust/<str:name>/' , Cust_delete , name = "Delete customer"),
+
+    path('createproduct/' , createProduct , name = "Create product"),
+    path('updateProduct/', updateProduct , name = "Update a product"),
+    path('deleteproduct/<str:product>/' , deleteProduct , name = "Delete a product"),
+    path('updateQuantity/<str:name>/<str:quantity>/', updateQuantity , name = "Update a product quantity"),
+    path('BatchUpload/' , batchuploadProducts , name = "Batch Upload products"),
+
 ]
 
 

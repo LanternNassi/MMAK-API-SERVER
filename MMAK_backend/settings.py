@@ -11,11 +11,11 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-import pymysql
+# import pymysql
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-pymysql.install_as_MySQLdb()
+# pymysql.install_as_MySQLdb()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -24,7 +24,7 @@ pymysql.install_as_MySQLdb()
 SECRET_KEY = 'django-insecure-7#d!zjol&6i=$j2d(7ti^xeippo*fz_as-_*hc8@vv5%-#+_)v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -90,28 +90,25 @@ WSGI_APPLICATION = 'MMAK_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         # 'ENGINE': 'django.db.backends.sqlite3',
-#         # 'NAME': BASE_DIR / 'db.sqlite3',
-
-#     }
-# }
-
 DATABASES = {
-        'default': {
-            'ENGINE': 'mssql',
-            'NAME': 'MMAK',
-            # 'USER': 'NESSIM\SHANY',
-            # 'PASSWORD': 'password',
-            'HOST': 'NESSIM',
-            'PORT': '',
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
 
-            'OPTIONS': {
-                'driver': "ODBC Driver 17 for SQL Server",
-            },
-        },
     }
+}
+
+# DATABASES = {
+#         'default': {
+#             'ENGINE': 'mssql',
+#             'NAME': 'MMAK',
+#             'HOST': 'NESSIM',
+#             'PORT': '',
+#             'OPTIONS': {
+#                 'driver': "ODBC Driver 17 for SQL Server",
+#             },
+#         },
+#     }
 
 
 # Password validation
