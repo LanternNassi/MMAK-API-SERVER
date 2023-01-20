@@ -43,9 +43,9 @@ INSTALLED_APPS = [
     'Supervisor',
     'corsheaders',
 ]
-CORS_ALLOWED_ORIGINS = [
-    '*'
-]
+# CORS_ALLOWED_ORIGINS = [
+#     '*'
+# ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -92,10 +92,9 @@ WSGI_APPLICATION = 'MMAK_backend.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://mmak_user:BH9HTVBO1ig1mqVTVQxxEuhuvlAFjTV0@dpg-cf58fd82i3mookmjelk0-a/mmak',
+        default='postgres://mmak_user:BH9HTVBO1ig1mqVTVQxxEuhuvlAFjTV0@dpg-cf58fd82i3mookmjelk0-a.oregon-postgres.render.com/mmak',
         conn_max_age=1000
-    )
-        
+    )       
     
 }
 
