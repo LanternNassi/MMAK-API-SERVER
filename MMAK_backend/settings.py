@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 # import pymysql
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -43,8 +44,7 @@ INSTALLED_APPS = [
     'corsheaders',
 ]
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:8000',
-    'http://192.168.43.189:8000',
+    '*'
 ]
 
 MIDDLEWARE = [
@@ -91,11 +91,12 @@ WSGI_APPLICATION = 'MMAK_backend.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-
-    }
+    'default': dj_database_url.config(
+        default='postgres://mmak_user:BH9HTVBO1ig1mqVTVQxxEuhuvlAFjTV0@dpg-cf58fd82i3mookmjelk0-a/mmak',
+        conn_max_age=1000
+    )
+        
+    
 }
 
 # DATABASES = {
